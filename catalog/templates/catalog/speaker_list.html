@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'catalog/styles.css' %}">
+  <h1 style="text-align: left;">Speaker List</h1>
+  {% if speaker_list %}
+  <ul>
+    {% for speaker in speaker_list %}
+      <li>
+        <a href="{{ speaker.get_absolute_url }}">{{ speaker }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no Speakers available.</p>
+  {% endif %} 
+{% endblock %}

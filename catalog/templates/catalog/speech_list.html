@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'catalog/styles.css' %}">
+  <h1>Speech List</h1>
+  {% if speech_list %}
+  <ul>
+    {% for speech in speech_list %}
+      <li>
+        <a href="{{ speech.get_absolute_url }}"><strong>{{ speech.title}}</strong></a> ({{speech.speaker}})({{ speech.date }})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no speeches available.</p>
+  {% endif %} 
+{% endblock %}

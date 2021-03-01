@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'catalog/styles.css' %}">
+  <h1 style="font-size: 50px;">speaker: {{ speaker.first_name }}</h1>
+
+  <p><strong>First Name:</strong> {{speaker.first_name}}</p>
+  <p><strong>Last Name:</strong> {{speaker.last_name}}</p>
+  <p><strong>Biography:</strong> {{speaker.biography}}</p>
+  <!-- <p><strong>date_of_birth:</strong> {{speaker.date_of_birth}}</p> -->
+  <!-- <p><strong>date_of_death:</strong> {{speaker.date_of_death}}</p> -->
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4 style="font-size: 20px;">speech list</h4>
+
+    {% for speech in speaker.speech_set.all %}
+    <hr>    
+    <!-- <p><li><strong></strong> {{speech.title}}   {{ speech.date }}</li></p> -->
+    <p><li><a href="{{ speech.get_absolute_url }}"><strong>{{ speech.title}}</strong></a> {{ speech.date }}</li></p>
+    <!-- <p><strong>summary:</strong>{{speech.summary}}</p> -->
+    <!-- <a href="{{ speech.get_absolute_url }}"><strong>{{ speech.title}}</strong></a> -->
+
+    {% endfor %}
+  </div>
+{% endblock %}

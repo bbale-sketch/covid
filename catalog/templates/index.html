@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<!-- <div style="background-color: brown;"> -->
+<link rel="stylesheet" href="{% static 'catalog/styles.css' %}">
+<div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+  <h1>COVID-19 PANDEMIC</h1>
+  <DIV style="text-align: center;">
+  <p>Welcome to Covid Pamdemic, a website developed by <em>Benji Adzi</em>!</p>
+</div>
+  <h2></h2>
+  <!-- <p style="text-align: center;"> <strong>SITUATION UPDATE, COVID-19 OUTBREAK IN GHANA </strong></p>  -->
+    <p style="text-align: center;">This website gives you all the latest updates on covid-19</p>
+  <ul>
+    <a href="{% url 'speeches' %}"> <button style="color: rgb(182, 19, 19);">Click here to access recent speeches</button> </a>
+    
+  </ul>
+</DIV>
+<!-- </div> -->
+{% endblock %}

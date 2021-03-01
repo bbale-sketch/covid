@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Covid 19 Pandemic</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="bootstrap.css">
+  
+  <!-- CSS -->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+      {% block sidebar %}
+        <ul class="sidebar-nav">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'speeches' %}">ALL speeches</a></li>
+          <li><a href="{% url 'speakers' %}">ALL speakers</a></li>
+          
+          
+       {% if user.is_authenticated %}
+       Hi {{ user.username }}!
+      <p><a href="{% url 'login' %}">Log Out</a></p>
+    {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+        </ul>
+        
+     {% endblock %}
+      </div>
+      <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- <h2>Card Header and Footer</h2> -->
+    <div class="card">
+      <div class="card-header">VGMA Honours Health Workers For Theur Gallant Role In The Fight Against COVID-19</div>
+      <div class="card-body">The 21st Vodafone Ghana Music Award has acknowledged the heroic efforts of health workers in the country's fight against SARS-COV-2(COVID-19)Pandenic.
+        The Covid-19 pandemic which took the world by surprise, literally put a halt to life, brought the economy to a standstill and caused various job loss and deaths globally.
+        
+        While everyone was running from the virus, health workers designed the machinery to control the impact of the virus in Ghana and the world at large. They researched, tested, treated and provided guidelines for us to survive in the pandemic which had claimed more lives than expected.
+        
+        As a result, the Ghana Music Awards Scheme thought it necessary to say thank you and honour health workers for their joint effort to control the impact of the pandemic in the country.
+        
+        The Director-General of the Ghana Health Service Dr. Patrick Kuma-Aboagye who received the awards on behalf of the Service and the entire health work force, dedicated the award to all health workers in the country for their sacrifices and dedication to the COVID-19 pandemic fight and also thanked the organisers of the event for their recognition.
+        <a href="https://www.ghanahealthservice.org/ghs-item-details.php?scid=22&iid=157">Read More</a></div> 
+      <!-- <div class="card-footer">Footer</div> -->
+    </div>
+  </div>
+
+  <marquee class="mar">FIND MORE ABOUT US</marquee>
+
+  <h5>Coronavirus - Ghana: WHO Assures Government of Ghana of UN’s Continuous Collaboration in the fight against COVID-19</h5>
+  <p>
+    The Acting Country Representative for WHO in Ghana, Dr. Neema Kimambo has reiterated the UN Family continued support and collaboration of the Government of Ghana in the phase of increasing COVID-19 infections.
+
+    In a speech read on her behalf at a brief ceremony to hand over some medical equipment and supplies, Dr. Kimambo said since March 12, 2020 when Ghana recorded its first COVID-19 cases, the United Nations’ WHO together with its Health Partners have supported in capacity building efforts, the provision of logistics as well as technical assistance in coordinating the overall response in Ghana. She added that, to date, WHO has supported the training of about 600 contact tracers.
+    
+    The latest donation of 4,970 Gene Expert Cartridges, 15,000 pieces of KN 95 Respirator Masks, 32 Patient Monitors and number of Sheilds, Examination Gloves, Goggles, Gowns, Medical Masks, was with support from the World Bank Pandemic Emergency Fund – PEF and presented by Dr. Sally-Ann Ohene, Disease Prevention and Control Officer to the Ministry of Health.
+    
+    The items which are estimated to cost $360,000.00 are expected to be distributed to the various Treatment Centers, the National Ambulance Service and some selected laboratories in regions with high burden of COVID-19 cases. In addition, the National Ambulance Service received some funding support of GHS 72,300 from WHO to procure fuel to transport COVID-19 cases to designated facilities in the region. Together with the UN Family, WHO also presented 120 oxygen cylinders (with oxygen) to the Ghana Infectious  Disease Centre (GIDC) to help manage the increase in severe and critical cases of COVID-19.
+    <a href="https://www.africanews.com/2021/02/03/coronavirus-ghana-who-assures-government-of-ghana-of-un-s-continuous-collaboration-in-the-fight-against-covid-19//">Read More</a>
+  </p>
+  <marquee class="mar">FIND MORE ABOUT US</marquee>
+
+
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="card">
+            <div class="card-header">
+                <h4>Press releaseCOVID-19 vaccine doses shipped by the COVAX Facility head to Ghana.</h4>
+            </div>
+
+            <div class="card-body">
+                <!-- <a href="https://www.livescience.com/28162-rabbits.html"><img src="images/pic3.webp" alt="" width="100%"></a> -->
+            </div>
+
+            <div class="card-footor">
+                COVAX announces 600,000 doses of the AstraZeneca/Oxford vaccine licensed to Serum Institute of India have arrived in Accra, Ghana; further deliveries to Abidjan, Cote d’Ivoire are expected this week
+ 
+                Final first round of allocations for doses of AstraZeneca/Oxford and Pfizer-BioNTech vaccines, to the majority of countries and economies participating in the COVAX Facility, anticipated to be published in the coming days.
+             <a href="https://www.unicef.org/press-releases/covid-19-vaccine-doses-shipped-covax-facility-head-ghana-marking-beginning-global">Read More</a>
+            </div>
+
+        </div>
+        <!-- END OF FIRST COLUNM -->
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card">
+            <div class="card-header">
+                <h4>Ghana launches COVID-19 Tracker App</h4>
+            </div>
+
+            <div class="card-body">
+              <!-- <a href="https://www.rspca.org.uk/adviceandwelfare/pets/rabbits"><img src="images/pic2.jpg" alt="" width="100%"></a>  -->
+            </div>
+
+            <div class="card-footor">
+                Ghana’s Vice President, Dr Mahamudu Bawumia, in collaboration with the Ministry of Communications this week launched a new app designed to help in tracing people who have come into contact with COVID-19 positive individuals.
+
+The app is meant to augment the government’s effort in the fight against the global pandemic, and Dr Bawumia says that the gathering and availability of data has played a significant role in Ghana’s battle against COVID-19 so far.
+
+Data: Ghana’s ‘most powerful weapon’ in the fight against COVID-19.
+                
+                <a href="https://news.itu.int/ghana-launches-covid-19-tracker-app/">Read More</a>
+            </div>
+
+        </div>
+        <!-- END OF FIRST COLUNM -->
+        </div>
+
+
+
+        <div class="col-md-4">
+
+            <div class="card">
+            <div class="card-header bg-primary text-white" align="center">
+                <h6>MORE</h6>
+            </div>
+
+            <div class="card-body">
+                <!-- <img src="images/pic11.jpg" alt="" width="100%"> -->
+                <a href="https://www.moc.gov.gh/launch-gh-covid-19-tracker-app">Launch of GH COVID-19 Tracker App</a><hr>
+                <a href="https://blogs.worldbank.org/youth-transforming-africa/how-ghana-based-mental-health-service-helping-fight-covid-19-pandemic">How a Ghana-based mental health service is helping fight the COVID-19 pandemic</a>
+                <hr>
+                <a href="https://www.afro.who.int/news/strengthening-contact-tracing-covid-19-greater-accra-region">Strengthening Contact Tracing for COVID-19 in Greater Accra Region</a>
+                <hr>
+                <a href="https://www.bbc.com/pidgin/tori-52351594">Coronavirus: How Ghana plan to fight Covid-19 without lockdown</a>
+                <hr>
+
+
+            </div>
+
+            <div class="card-footor">
+                <!-- England U21 international Cantwell has been the subject of interest from a number of clubs over the summer, notably from Leeds United in the Premier League.
+                <a href="https://www.skysports.com/football/news/11709/12104651/todd-cantwell-norwich-expect-midfielder-to-remain-at-championship-club">Read More</a> -->
+            </div>
+
+        </div>
+        <!-- END OF FIRST COLUNM -->
+        </div>
+
+
+        <!-- END OF FIRST ROW -->
+    </div>
+
+ 
+  
+  
+
+  
+
+
+
+
+  
+
+
+
+  
+  
+ 
+  
+  
+
+ 
+  
+         <!-- JS, Popper.js, and jQuery -->
+  <script src="bootstrap.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
